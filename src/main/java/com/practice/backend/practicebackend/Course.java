@@ -1,8 +1,21 @@
 package com.practice.backend.practicebackend;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+@Document(collection = "course")
 public class Course {
+  @Id
+  // @Indexed(unique = true)
+  // @Field(value = "id")
   private long id;
+
+  @Field(value = "title")
   private String title;
+
+  @Field(value = "description")
   private String description;
 
   public Course(long id, String title, String description) {
